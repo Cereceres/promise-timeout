@@ -1,5 +1,7 @@
-module.exports = (handler, timeout) => {
-    let timer;
+const defaultTimeout = 3000;
+
+module.exports = (handler = Promise.resolve(), timeout = defaultTimeout) => {
+    let timer = 0;
     const promise = handler instanceof Promise ? handler : new Promise(handler);
     const rejected = new Promise((resolve, reject) => {
         timer = setTimeout(reject, timeout, new Error('timeout broken'));
