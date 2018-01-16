@@ -1,0 +1,30 @@
+{
+  "name": "promise-timeout",
+  "version": "0.0.1",
+  "description": "reject the promise if timeout is broken",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cereceres/promise-timeout.git"
+  },
+  "keywords": [
+    "primise",
+    "timeout",
+    "reject",
+    "broken",
+    "rejected",
+    "bluebird"
+  ],
+  "author": "Jesus Cereceres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cereceres/promise-timeout/issues"
+  },
+  "homepage": "https://github.com/Cereceres/promise-timeout#readme"
+}
