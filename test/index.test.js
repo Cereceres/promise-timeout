@@ -12,15 +12,21 @@ describe('test to promise timeout', () => {
     });
 
     it('should resolve if timeout is not broken', (done) => {
-        promise((resolve) => setTimeout(resolve, 1000), 2000)
-            .then(() => done())
+        promise((resolve) => setTimeout(resolve, 1000, 'test'), 2000)
+            .then((res) => {
+                assert(res === 'test');
+                done();
+            })
             .catch(done);
     });
 
     it('should resolve the promise if is not rejected', (done) => {
-        const p = new Promise((resolve) => setTimeout(resolve, 1000));
+        const p = new Promise((resolve) => setTimeout(resolve, 1000, 'test'));
         promise(p, 2000)
-            .then(() => done())
+            .then((res) => {
+                assert(res === 'test');
+                done();
+            })
             .catch(done);
     });
 

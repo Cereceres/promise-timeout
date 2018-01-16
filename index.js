@@ -5,8 +5,13 @@ module.exports = (handler, timeout) => {
         timer = setTimeout(reject, timeout, new Error('timeout broken'));
     });
 
-    return Promise.race([ promise, rejected ]).catch((error) => {
-        clearTimeout(timer);
-        return Promise.reject(error);
-    });
+    return Promise.race([ promise, rejected ])
+        .then((res) => {
+            clearTimeout(timer);
+            return res;
+        })
+        .catch((error) => {
+            clearTimeout(timer);
+            return Promise.reject(error);
+        });
 };
