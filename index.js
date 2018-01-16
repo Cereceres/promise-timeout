@@ -4,7 +4,7 @@ module.exports = (handler = Promise.resolve(), timeout = defaultTimeout) => {
     let timer = 0;
     const promise = handler instanceof Promise ? handler : new Promise(handler);
     const rejected = new Promise((resolve, reject) => {
-        timer = setTimeout(reject, timeout, new Error('timeout broken'));
+        timer = setTimeout(reject, timeout, new Error(`timeout of promise is broken: ${timeout}`));
     });
 
     return Promise.race([ promise, rejected ])
