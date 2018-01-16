@@ -1,5 +1,5 @@
 {
-  "name": "promise-timeout",
+  "name": "promiseout",
   "version": "0.0.1",
   "description": "reject the promise if timeout is broken",
   "main": "index.js",
