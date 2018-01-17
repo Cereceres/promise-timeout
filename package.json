@@ -1,6 +1,6 @@
 {
   "name": "promiseout",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "reject the promise if timeout is broken",
   "main": "index.js",
   "directories": {
